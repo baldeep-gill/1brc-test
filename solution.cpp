@@ -5,23 +5,13 @@
 #include <string>
 #include <vector>
 
-#include <chrono>
-
-int main(int argc, char* argv[]) {
-    std::string filename = "data.txt";
-    
-    if (argc > 1) {
-        filename = argv[1];
-    }
-    
+// Don't change signature of this function, feel free to change everything else
+inline void solution(const std::string& filename) {
     std::ifstream inputFile(filename);
-    
-    auto start_time = std::chrono::high_resolution_clock::now();
-
 
     if (!inputFile.is_open()) {
         std::cerr << "Error opening file \n";
-        return 1;
+        return;
     }
     
     std::map<std::string, std::vector<float>, std::less<std::string>> station_data{};
@@ -55,7 +45,7 @@ int main(int argc, char* argv[]) {
 
     if (!outputFile.is_open()) {
         std::cerr << "Error opening output file \n";
-        return 1;
+        return;
     }
 
     for (const auto& [station_name, temperatures] : station_data) {
@@ -66,11 +56,4 @@ int main(int argc, char* argv[]) {
         float average = sum / temperatures.size();
         outputFile << std::fixed << std::setprecision(1) << station_name << ";" << station_mins[station_name] << ";" << average << ";" << station_maxs[station_name] << "\n";
     }
-
-    auto end_time = std::chrono::high_resolution_clock::now();
-    auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
-
-    std::cout << "Elapsed time: " << elapsed_time.count() << " ms\n";
-
-    return 0;
 }
