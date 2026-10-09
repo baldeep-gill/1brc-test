@@ -5,5 +5,6 @@ make
 
 Usage:
 ```bash
-./generate-data <num_rows>
+./generate-data <num_rows> > data.txt
 ```
+
