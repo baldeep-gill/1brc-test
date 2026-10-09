@@ -1,4 +1,5 @@
 #include <array>
+#include <iomanip>
 #include <iostream>
 #include <random>
 #include <string>
@@ -17,13 +18,13 @@ int main(int argc, char* argv[]) {
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> dis(0, stations.size() - 1);
-    std::uniform_int_distribution<> temp_dis(-99, 999);
+    std::uniform_int_distribution<> temp_dis(-99, 399);
 
     for (long long i = 0; i < num_stations; ++i) {
         std::string_view name = stations[dis(gen)];
         float temp = static_cast<float>(temp_dis(gen) / 10.0f);
         
-        std::cout << name << ";" << temp << "\n";
+        std::cout << name << ";" << std::fixed << std::setprecision(1) << temp << "\n";
     }
 
     return 1;
