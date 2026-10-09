@@ -1,1 +1,4 @@
-# 1brc-test
+To simply compile:
+```bash
+make
+```

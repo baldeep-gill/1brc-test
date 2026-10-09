@@ -4,9 +4,9 @@
 #include <random>
 #include <string>
 
-    static constexpr std::array<std::string_view, 100> stations = {
-        "London","Birmingham","Manchester","Liverpool","Leeds","Sheffield","Bristol","Newcastle upon Tyne","Nottingham","Leicester","Coventry","Southampton","Portsmouth","Oxford","Cambridge","Norwich","York","Hull","Stoke-on-Trent","Derby","Wolverhampton","Reading","Milton Keynes","Luton","Swindon","Gloucester","Cheltenham","Worcester","Hereford","Bath","Exeter","Plymouth","Truro","Taunton","Bournemouth","Poole","Salisbury","Winchester","Brighton","Hastings","Chichester","Canterbury","Dover","Maidstone","Guildford","Woking","Ipswich","Colchester","Peterborough","Northampton","Lincoln","Grimsby","Scarborough","Harrogate","Skipton","Blackpool","Preston","Lancaster","Carlisle","Kendal","Barrow-in-Furness","Chester","Crewe","Shrewsbury","Telford","Oswestry","Durham","Sunderland","Middlesbrough","Darlington","Alnwick","Berwick-upon-Tweed","Edinburgh","Glasgow","Aberdeen","Dundee","Inverness","Perth","Stirling","Falkirk","Ayr","Dumfries","Oban","Fort William","St Andrews","Cardiff","Swansea","Newport","Wrexham","Bangor","Aberystwyth","Carmarthen","Llandudno","Holyhead","Belfast","Londonderry","Lisburn","Newry","Coleraine","Enniskillen"
-    };
+static constexpr std::array<std::string_view, 100> stations = {
+    "London","Birmingham","Manchester","Liverpool","Leeds","Sheffield","Bristol","Newcastle upon Tyne","Nottingham","Leicester","Coventry","Southampton","Portsmouth","Oxford","Cambridge","Norwich","York","Hull","Stoke-on-Trent","Derby","Wolverhampton","Reading","Milton Keynes","Luton","Swindon","Gloucester","Cheltenham","Worcester","Hereford","Bath","Exeter","Plymouth","Truro","Taunton","Bournemouth","Poole","Salisbury","Winchester","Brighton","Hastings","Chichester","Canterbury","Dover","Maidstone","Guildford","Woking","Ipswich","Colchester","Peterborough","Northampton","Lincoln","Grimsby","Scarborough","Harrogate","Skipton","Blackpool","Preston","Lancaster","Carlisle","Kendal","Barrow-in-Furness","Chester","Crewe","Shrewsbury","Telford","Oswestry","Durham","Sunderland","Middlesbrough","Darlington","Alnwick","Berwick-upon-Tweed","Edinburgh","Glasgow","Aberdeen","Dundee","Inverness","Perth","Stirling","Falkirk","Ayr","Dumfries","Oban","Fort William","St Andrews","Cardiff","Swansea","Newport","Wrexham","Bangor","Aberystwyth","Carmarthen","Llandudno","Holyhead","Belfast","Londonderry","Lisburn","Newry","Coleraine","Enniskillen"
+};
 
 int main(int argc, char* argv[]) {
     long long num_stations = 100000;
