@@ -5,8 +5,19 @@
 #include <string>
 #include <vector>
 
+#include <chrono>
+
 int main(int argc, char* argv[]) {
-    std::ifstream inputFile("data-small.txt");
+    std::string filename = "data.txt";
+    
+    if (argc > 1) {
+        filename = argv[1];
+    }
+    
+    std::ifstream inputFile(filename);
+    
+    auto start_time = std::chrono::high_resolution_clock::now();
+
 
     if (!inputFile.is_open()) {
         std::cerr << "Error opening file \n";
@@ -53,8 +64,13 @@ int main(int argc, char* argv[]) {
             sum += temp;
         }
         float average = sum / temperatures.size();
-        std::cout << std::fixed << std::setprecision(1) << station_name << ";" << station_mins[station_name] << ";" << average << ";" << station_maxs[station_name] << "\n";
+        outputFile << std::fixed << std::setprecision(1) << station_name << ";" << station_mins[station_name] << ";" << average << ";" << station_maxs[station_name] << "\n";
     }
+
+    auto end_time = std::chrono::high_resolution_clock::now();
+    auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+
+    std::cout << "Elapsed time: " << elapsed_time.count() << " ms\n";
 
     return 0;
 }
